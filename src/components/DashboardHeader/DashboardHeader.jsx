@@ -21,7 +21,7 @@ function DashboardHeader() {
   }
   return (
     <>
-      <header className='fixed w-full z-50'>
+      <header className='fixed w-full z-50 bg-white'>
         <nav className={`h-[60px] flex justify-between items-center px-5 ${isMenuOpen ? '' : 'shadow-md'}`}>
           <div className='md:flex md:items-center md:gap-10 lg:relative lg:left-16'>
             <i className="fa-solid fa-bars text-xl cursor-pointer lg:hidden" onClick={toggleSidebar}></i>
