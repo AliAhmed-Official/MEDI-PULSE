@@ -8,6 +8,7 @@ import OTP from './pages/OTP';
 import DoctorList from './pages/DoctorList';
 import Home from './pages/Home';
 import PatientDashboard from './pages/PatientDashboard';
+import PatientDashboardBookAppointment from './pages/PatientDashboardBookAppointment';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
@@ -20,7 +21,8 @@ function App() {
       {/* <Signup /> */}
       {/* <OTP /> */}
       {/* <DoctorList /> */}
-      <PatientDashboard />
+      {/* <PatientDashboard /> */}
+      <PatientDashboardBookAppointment />
     </>
   )
 }
