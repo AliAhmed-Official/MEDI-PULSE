@@ -9,6 +9,7 @@ import DoctorList from './pages/DoctorList';
 import Home from './pages/Home';
 import PatientDashboard from './pages/PatientDashboard';
 import PatientDashboardBookAppointment from './pages/PatientDashboardBookAppointment';
+import PatientDashboardPastAppointment from './pages/PatientDashboardPastAppointment';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
@@ -22,7 +23,8 @@ function App() {
       {/* <OTP /> */}
       {/* <DoctorList /> */}
       {/* <PatientDashboard /> */}
-      <PatientDashboardBookAppointment />
+      {/* <PatientDashboardBookAppointment /> */}
+      <PatientDashboardPastAppointment />
     </>
   )
 }
