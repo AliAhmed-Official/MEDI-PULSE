@@ -10,7 +10,7 @@ function DashboardSidebar({ sidebarOpen }) {
       <div className={` max-w-[260px] min-w-[260px] overflow-y-auto z-40 fixed mt-[60px] pt-7 items-center transition-transform duration-300 ease-in-out bg-white ${sidebarOpen} lg:translate-x-0`} style={{ height: 'calc(100vh - 60px)' }}>
         <div className='flex flex-col items-center mb-5'>
           <div className='w-[70px] h-[70px] rounded-lg shadow-full'>
-            <img src="/public/images/me.jpeg" alt="Patient Image" className='rounded-lg max-w-full max-h-full' />
+            <img src="/public/images/me.jpeg" alt="Patient Image" className='rounded-lg max-w-full min-w-full min-h-full max-h-full' />
           </div>
           <div className='text-center space-y-1 mt-3'>
             <p className='font-medium'>Ali Ahmed</p>
