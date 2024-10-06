@@ -7,7 +7,7 @@ function DashboardSidebar({ sidebarOpen }) {
   }
   return (
     <>
-      <div className={` max-w-[260px] min-w-[260px] overflow-y-auto z-40 fixed mt-[60px] pt-7 items-center transition-transform duration-300 ease-in-out bg-white ${sidebarOpen} lg:translate-x-0`} style={{ height: 'calc(100vh - 60px)' }}>
+      <div className={` max-w-[260px] min-w-[260px] overflow-y-auto z-50 fixed mt-[60px] pt-7 items-center transition-transform duration-300 ease-in-out bg-white ${sidebarOpen} lg:translate-x-0`} style={{ height: 'calc(100vh - 60px)' }}>
         <div className='flex flex-col items-center mb-5'>
           <div className='w-[70px] h-[70px] rounded-lg shadow-full'>
             <img src="/public/images/me.jpeg" alt="Patient Image" className='rounded-lg max-w-full min-w-full min-h-full max-h-full' />
@@ -52,13 +52,6 @@ function DashboardSidebar({ sidebarOpen }) {
             <div className='p-3 rounded-lg text-xl flex items-center gap-2 hover:bg-[#F0F3FB] cursor-pointer'>
               <i className="fa-solid fa-file-lines w-6 text-center"></i>
               <p className='text-lg'>Prescriptions</p>
-            </div>
-          </div>
-
-          <div className='px-2'>
-            <div className='p-3 rounded-lg text-xl flex items-center gap-2 hover:bg-[#F0F3FB] cursor-pointer'>
-              <i className="fa-solid fa-receipt w-6 text-center"></i>
-              <p className='text-lg'>Billing</p>
             </div>
           </div>
 

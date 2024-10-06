@@ -6,6 +6,11 @@ function PatientDashboard() {
     <>
       <DashboardHeader />
       <main className='bg-[#F0F3FB] mt-[60px] z-0 lg:ml-[260px] lg:h-screen'>
+        <div className='my-5 mx-5 flex items-center gap-3 text-gray-500'>
+          <p className='text-xl md:text-2xl font-semibold'>Dashboard</p>
+          <p><i className="fa-solid fa-columns text-lg"></i></p>
+        </div>
+
         <div className='flex flex-col bg-[#F0F3FB] my-5 gap-5'>
           <div className='bg-white mx-5 rounded-md p-5 pb-10 text-gray-500 flex flex-col md:flex-row md:items-center gap-5'>
             <img src="/public/images/patient welcome.png" alt="Patient Welcome" className='md:max-w-[297px] md:max-h-[148px]' />

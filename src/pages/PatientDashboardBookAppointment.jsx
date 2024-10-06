@@ -30,11 +30,16 @@ function PatientDashboardBookAppointment() {
       });
     }
   };
-
   return (
     <>
       <DashboardHeader />
       <main className='bg-[#F0F3FB] mt-[60px] z-0 lg:ml-[260px] lg:h-screen'>
+        <div className='my-5 mx-3 flex items-center gap-3 text-gray-500'>
+          <p className='text-xl md:text-2xl font-semibold'>Dashboard</p>
+          <p><i className="fa-solid fa-chevron-right text-sm"></i></p>
+          <p className='text-xl md:text-2xl font-semibold'>Book Appointment</p>
+        </div>
+
         <div className='flex flex-col my-5 bg-[#F0F3FB]'>
           <div className='bg-white text-gray-500 rounded-md mx-3 p-3 flex flex-col gap-8 py-5'>
             <p className='font-semibold text-lg'>Patient Details</p>
