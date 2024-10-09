@@ -14,7 +14,7 @@ function PatientDetailCard() {
 
   return (
     <>
-      <div className="w-full h-[550px] lg:h-[520px] rounded-xl shadow-full mx-2 mt-[80px] overflow-hidden relative">
+      <div className=" h-[550px] lg:h-[520px] rounded-xl shadow-full m-2 overflow-hidden relative">
         <div
           id="boxContent"
           className="relative w-full h-full"

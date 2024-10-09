@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-function DashboardSidebar({ sidebarOpen }) {
+function PatientDashboardSidebar({ sidebarOpen }) {
   const [isAppointmentListOpen, setIsAppointmentListOpen] = useState(false);
   const toggleAppointmentList = () => {
     setIsAppointmentListOpen((prev) => !prev);
@@ -74,4 +74,4 @@ function DashboardSidebar({ sidebarOpen }) {
   )
 }
 
-export default DashboardSidebar;
+export default PatientDashboardSidebar;

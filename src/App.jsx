@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import DoctorDashboard from './components/Doctor/DoctorDashboard';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import OTP from './pages/OTP';
@@ -11,6 +10,9 @@ import PatientDashboardBookAppointment from './pages/PatientDashboardBookAppoint
 import PatientDashboardPastAppointment from './pages/PatientDashboardPastAppointment';
 import PatientDashboardPrescription from './pages/PatientDashboardPrescription';
 import PatientDashboardSettings from './pages/PatientDashboardSettings';
+import DoctorDashboard from './pages/DoctorDashboard';
+import DoctorDashboardListAppointments from './pages/DoctorDashboardListAppointments';
+import PatientDetailCard from './components/Doctor/PatientDetailCard';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Test from './pages/Test';
@@ -20,8 +22,7 @@ function App() {
     <>
       {/* <Test /> */}
       {/* <DoctorDashboard /> */}
-      {/* <Hero /> */}
-      <Home />
+      {/* <Home /> */}
       {/* <Login /> */}
       {/* <Signup /> */}
       {/* <OTP /> */}
@@ -31,6 +32,9 @@ function App() {
       {/* <PatientDashboardPastAppointment /> */}
       {/* <PatientDashboardPrescription /> */}
       {/* <PatientDashboardSettings /> */}
+      {/* <DoctorDashboard /> */}
+      <DoctorDashboardListAppointments />
+      {/* <PatientDetailCard /> */}
     </>
   )
 }

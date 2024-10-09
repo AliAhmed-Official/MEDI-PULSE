@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import PatientDashboardSidebar from '../components/DashboardSidebar/PatientDashboardSidebar';
+import { React, useState } from 'react';
+import DoctorDashboardSidebar from '../components/DashboardSidebar/DoctorDashboardSidebar';
 
-function PatientDashboardPrescription() {
+function DoctorDashboardListAppointments() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isprofileDropMenuOpen, setProfileDropMenuOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState('translate-x-[-100%]');
@@ -19,7 +19,6 @@ function PatientDashboardPrescription() {
       return prev == 'translate-x-[-100%]' ? 'translate-x-0' : 'translate-x-[-100%]';
     });
   }
-
   const [focusState, setFocusState] = useState(false);
   const handleFocus = () => {
     setFocusState(true);
@@ -81,13 +80,12 @@ function PatientDashboardPrescription() {
         </div>
 
       </header>
-      <PatientDashboardSidebar sidebarOpen={isSidebarOpen} />
+      <DoctorDashboardSidebar sidebarOpen={isSidebarOpen} />
       <main className='bg-[#F0F3FB] mt-[60px] z-0 lg:ml-[260px] h-screen'>
-
         <div className='my-5 mx-3 flex items-center gap-3 text-gray-500'>
           <p className='text-xl md:text-2xl font-semibold'>Dashboard</p>
           <p><i className="fa-solid fa-chevron-right text-sm"></i></p>
-          <p className='text-xl md:text-2xl font-semibold'>Prescriptions</p>
+          <p className='text-xl md:text-2xl font-semibold'>Patient Appointments</p>
         </div>
 
         <div className='flex flex-col my-5 bg-[#F0F3FB] '>
@@ -107,38 +105,80 @@ function PatientDashboardPrescription() {
               <table className="min-w-full border-collapse border border-gray-300 text-center">
                 <thead>
                   <tr className="bg-gray-200">
-                    <th className="py-2 px-4 border border-gray-300">#PID</th>
-                    <th className="py-2 px-16 border border-gray-300">Created by</th>
-                    <th className="py-2 px-4 border border-gray-300">Date</th>
-                    <th className="py-2 px-4 border border-gray-300">Disease/Condition</th>
-                    <th className="py-2 px-12 md:px-4 border border-gray-300">Actions</th>
+                    <th className="py-2 px-4 border border-gray-300">Patient</th>
+                    <th className="py-2 px-4 border border-gray-300">Gender</th>
+                    <th className="py-2 px-4 border border-gray-300">Phone</th>
+                    <th className="py-2 px-4 border border-gray-300">Appointment Time</th>
+                    <th className="py-2 px-4 border border-gray-300">Last Visit Date</th>
+                    <th className="py-2 px-4 border border-gray-300">Status</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="hover:bg-gray-100">
-                    <td className="py-2 px-4 border border-gray-300">#A348</td>
-                    <td className="py-2 px-4 border border-gray-300">Dr. Lubaid Ahmed</td>
-                    <td className="py-2 px-4 border border-gray-300">4/10/2024</td>
-                    <td className="py-2 px-4 border border-gray-300">Fever</td>
-                    <td className="py-2 px-4 border text-center border-gray-300">
-                      <div className='flex justify-evenly text-lg'>
-                        <i className="fa-solid fa-cloud-arrow-down text-[#6B42B8] cursor-pointer"></i>
-                        <i className="fa-solid fa-eye text-[#4BA650] cursor-pointer"></i>
-                        <i className="fa-solid fa-trash-can text-red-600 cursor-pointer"></i>
+                  <tr className="hover:bg-gray-100 cursor-pointer">
+                    <td className="py-2 px-4 border border-gray-300">
+                      <div className='flex flex-col text-sm md:text-base gap-1 items-center'>
+                        <img src="/public/images/me.jpeg" alt="Patient Name" className='w-12 h-12 rounded-full' />
+                        <p>Ali Ahmed</p>
                       </div>
+                    </td>
+                    <td className="py-2 px-4 border border-gray-300"><p className='p-1 rounded-lg font-semibold bg-[#C7D9D4] text-[#4BA650]'>Male</p></td>
+                    <td className="py-2 px-4 border border-gray-300">
+                      <div className='flex items-center justify-center gap-2'>
+                        <i className="fa-solid fa-phone text-[#4BA650]"></i>
+                        <p>03222506206</p>
+                      </div>
+                    </td>
+                    <td className="py-2 px-4 border border-gray-300">
+                      <div className='flex items-center justify-center gap-2'>
+                        <i className="fa-regular fa-clock text-[#6B42B8] font-medium"></i>
+                        <p>09:00</p>
+                      </div>
+                    </td>
+                    <td className="py-2 px-4 border text-center border-gray-300">
+                      <p>09/01/2024</p>
+                    </td>
+                    <td className="py-2 px-4 border text-center border-gray-300">
+                      <i className="fa-solid fa-check text-xl text-[#4BA650]"></i>
                     </td>
                   </tr>
 
+                  <tr className="hover:bg-gray-100 cursor-pointer">
+                    <td className="py-2 px-4 border border-gray-300">
+                      <div className='flex flex-col text-sm md:text-base gap-1 items-center'>
+                        <img src="/public/images/alishbah.jpg" alt="Patient Name" className='w-12 h-12 rounded-full' />
+                        <p>Alishbah Shapater</p>
+                      </div>
+                    </td>
+                    <td className="py-2 px-4 border border-gray-300"><p className='p-1 rounded-lg font-semibold bg-[#D4CFE5] text-[#6B42B8]'>Female</p></td>
+                    <td className="py-2 px-4 border border-gray-300">
+                      <div className='flex items-center justify-center gap-2'>
+                        <i className="fa-solid fa-phone text-[#4BA650]"></i>
+                        <p>03222506206</p>
+                      </div>
+                    </td>
+                    <td className="py-2 px-4 border border-gray-300">
+                      <div className='flex items-center justify-center gap-2'>
+                        <i className="fa-regular fa-clock text-[#6B42B8] font-medium"></i>
+                        <p>09:00</p>
+                      </div>
+                    </td>
+                    <td className="py-2 px-4 border text-center border-gray-300">
+                      <p>09/01/2024</p>
+                    </td>
+                    <td className="py-2 px-4 border text-center border-gray-300">
+                      <i className="fa-solid fa-xmark text-xl text-[#e31b1b]"></i>
+                    </td>
 
+                  </tr>
                 </tbody>
               </table>
             </div>
-
           </div>
         </div>
       </main>
+
     </>
   )
 }
 
-export default PatientDashboardPrescription;
+export default DoctorDashboardListAppointments;
