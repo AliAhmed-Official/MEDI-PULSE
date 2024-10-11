@@ -90,7 +90,7 @@ function PatientDashboardPrescription() {
           <p className='text-xl md:text-2xl font-semibold'>Prescriptions</p>
         </div>
 
-        <div className='flex flex-col my-5 bg-[#F0F3FB] '>
+        <div className='flex flex-col my-5 bg-[#F0F3FB]'>
           <div className='bg-white text-gray-500 rounded-md mx-3 p-3 flex flex-col gap-6 py-5'>
             <div className='md:flex justify-center'>
               <div className="relative md:w-1/3">

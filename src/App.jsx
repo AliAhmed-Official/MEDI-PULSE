@@ -12,10 +12,18 @@ import PatientDashboardPrescription from './pages/PatientDashboardPrescription';
 import PatientDashboardSettings from './pages/PatientDashboardSettings';
 import DoctorDashboard from './pages/DoctorDashboard';
 import DoctorDashboardListAppointments from './pages/DoctorDashboardListAppointments';
-import PatientDetailCard from './components/Doctor/PatientDetailCard';
+import DoctorDashboardPatientDetail from './pages/DoctorDashboardPatientDetail';
+import PharmacyDashboard from './pages/PharmacyDashboard';
+import PharmacyDashboardMedicineList from './pages/PharmacyDashboardMedicineList';
+import PharmacyDashboardAddMedicine from './pages/PharmacyDashboardAddMedicine';
+import PharmacyDashboardPrescriptionList from './pages/PharmacyDashboardPrescriptionList';
+import PharmacyDashboardCart from './pages/PharmacyDashboardCart';
+import PharmacyDashboardCheckout from './pages/PharmacyDashboardCheckout';
+import PharmacyDashboardInvoice from './pages/PharmacyDashboardInvoice';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Test from './pages/Test';
+import PatientDetailCard from './components/Doctor/PatientDetailCard';
 
 function App() {
   return (
@@ -33,8 +41,15 @@ function App() {
       {/* <PatientDashboardPrescription /> */}
       {/* <PatientDashboardSettings /> */}
       {/* <DoctorDashboard /> */}
-      <DoctorDashboardListAppointments />
-      {/* <PatientDetailCard /> */}
+      {/* <DoctorDashboardListAppointments /> */}
+      {/* <DoctorDashboardPatientDetail /> */}
+      {/* <PharmacyDashboard /> */}
+      {/* <PharmacyDashboardMedicineList /> */}
+      {/* <PharmacyDashboardAddMedicine /> */}
+      {/* <PharmacyDashboardPrescriptionList /> */}
+      <PharmacyDashboardCart />
+      {/* <PharmacyDashboardCheckout /> */}
+      {/* <PharmacyDashboardInvoice /> */}
     </>
   )
 }
