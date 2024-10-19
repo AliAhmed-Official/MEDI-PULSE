@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <>
@@ -13,9 +15,9 @@ function Header() {
           </div>
           <div className="lg:space-x-2 space-x-1 text-[#58595B] lg:text-[16px] text-[12px]">
             <i class="fa-solid fa-user"></i>
-            <span className="cursor-pointer hover:text-[#0BC1E0]">Login</span>
+            <Link to='/login' className="cursor-pointer hover:text-[#0BC1E0]">Login</Link>
             <span>/</span>
-            <span className="cursor-pointer hover:text-[#0BC1E0]">Sign up</span>
+            <Link to='/signup' className="cursor-pointer hover:text-[#0BC1E0]">Sign up</Link>
           </div>
         </div>
 
@@ -33,7 +35,7 @@ function Header() {
             </ul>
           </div>
 
-          <div className="bg-[#0BC1E0] rounded p-3 text-white font-semibold cursor-pointer hover:text-[#0BC1E0] hover:bg-white hover:shadow-full px-6 hidden lg:block shadow-[#0CC1E0]">
+          <div className="bg-[#0BC1E0] rounded p-3 text-white font-semibold cursor-pointer hover:text-[#0BC1E0] hover:bg-white hover:shadow-full px-6 hidden lg:block shadow-[#0CC1E0] shine-effect">
             <p>Get Appointment</p>
           </div>
 

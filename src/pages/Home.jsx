@@ -1,4 +1,5 @@
 import { React, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import HomeCard from '../components/Cards/HomeCard';
@@ -131,9 +132,13 @@ function Home() {
         </section>
 
         <section className='mt-10 flex flex-wrap justify-center content-start gap-4'>
-          <HomeCard image="https://oladoc.com/dist/images/online-now-home-2x_compressed.webp" heading='Consult Online Now' description='Instantly connect with Specialists through Video call.' backColor='#E4F6F9' />
+          <Link to='/doctors'>
+            <HomeCard image="https://oladoc.com/dist/images/online-now-home-2x_compressed.webp" heading='Consult Online Now' description='Instantly connect with Specialists through Video call.' backColor='#E4F6F9' />
+          </Link>
 
-          <HomeCard image="https://oladoc.com/dist/images/home-appt-2xx_compressed.webp" heading='In Clinic Appointments' description="Book an In-Person visit to doctor's clinic." backColor='#FFF1DD' />
+          <Link to='/doctors'>
+            <HomeCard image="https://oladoc.com/dist/images/home-appt-2xx_compressed.webp" heading='In Clinic Appointments' description="Book an In-Person visit to doctor's clinic." backColor='#FFF1DD' />
+          </Link>
         </section>
 
         <section className='mt-10'>
