@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function DoctorListCard() {
   return (
@@ -51,8 +52,8 @@ function DoctorListCard() {
         </div>
 
         <div className='mt-5 flex justify-center gap-4 md:flex-col md:mt-0'>
-          <button className='flex-grow py-2 text-sm font-medium text-[#0CC1E0] border-2 border-solid border-[#0CC1E0] md:flex-grow-0 md:p-3 hover:bg-[#0CC1E0] hover:text-white'><span className='flex justify-center items-center gap-2 whitespace-nowrap'><i className="fa-solid fa-video"></i>Online Consult</span></button>
-          <button className='flex-grow py-2 text-sm font-medium bg-[#0CC1E0] text-white md:flex-grow-0 md:p-3 hover:text-black hover:bg-gray-400'>Book Appointment</button>
+          <Link to='/appointmentslotsdates' className='flex-grow py-2 text-sm font-medium text-[#0CC1E0] border-2 border-solid border-[#0CC1E0] md:flex-grow-0 md:p-3 hover:bg-[#0CC1E0] hover:text-white'><span className='flex justify-center items-center gap-2 whitespace-nowrap'><i className="fa-solid fa-video"></i>Online Consult</span></Link>
+          <Link to='/appointmentslotsdates' className='flex-grow py-2 text-sm font-medium bg-[#0CC1E0] text-white md:flex-grow-0 md:p-3 hover:text-black hover:bg-gray-400'>Book Appointment</Link>
         </div>
       </div>
     </>

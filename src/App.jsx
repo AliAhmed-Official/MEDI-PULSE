@@ -1,18 +1,14 @@
-import { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import OTP from './pages/OTP';
-import DoctorList from './pages/DoctorList';
-import Home from './pages/Home';
-import PatientDashboard from './pages/PatientDashboard';
-import PatientDashboardBookAppointment from './pages/PatientDashboardBookAppointment';
-import PatientDashboardPastAppointment from './pages/PatientDashboardPastAppointment';
-import PatientDashboardPrescription from './pages/PatientDashboardPrescription';
-import PatientDashboardSettings from './pages/PatientDashboardSettings';
-import DoctorDashboard from './pages/DoctorDashboard';
-import DoctorDashboardListAppointments from './pages/DoctorDashboardListAppointments';
-import DoctorDashboardPatientDetail from './pages/DoctorDashboardPatientDetail';
+import { React, useState } from 'react';
+import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop.jsx';
+import Home from './pages/Home.jsx';
+import Login from './pages/Login.jsx';
+import Signup from './pages/Signup.jsx';
+import OTP from './pages/OTP.jsx';
+import DoctorList from './pages/DoctorList.jsx';
+import DatesSlots from './pages/DatesSlots.jsx';
+import PatientDetails from './pages/PatientDetails.jsx';
+import Payment from './pages/Payment.jsx';
 import PharmacyDashboard from './pages/PharmacyDashboard';
 import PharmacyDashboardMedicineList from './pages/PharmacyDashboardMedicineList';
 import PharmacyDashboardAddMedicine from './pages/PharmacyDashboardAddMedicine';
@@ -20,36 +16,51 @@ import PharmacyDashboardPrescriptionList from './pages/PharmacyDashboardPrescrip
 import PharmacyDashboardCart from './pages/PharmacyDashboardCart';
 import PharmacyDashboardCheckout from './pages/PharmacyDashboardCheckout';
 import PharmacyDashboardInvoice from './pages/PharmacyDashboardInvoice';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Test from './pages/Test';
-import PatientDetailCard from './components/Doctor/PatientDetailCard';
+import PharmacyDashboardSettings from './pages/PharmacyDashboardSettings.jsx';
+import AdminDashboard from './pages/AdminDashboard.jsx';
+import AdminDashboardDoctors from './pages/AdminDashboardDoctors.jsx';
+import DoctorDashboard from './pages/DoctorDashboard.jsx';
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path='/pharmacy'>
+        <Route path='' element={<PharmacyDashboard />} />
+        <Route path='medicinelist' element={<PharmacyDashboardMedicineList />} />
+        <Route path='prescriptionlist' element={<PharmacyDashboardPrescriptionList />} />
+        <Route path='addmedicine' element={<PharmacyDashboardAddMedicine />} />
+        <Route path='pharmacycart' element={<PharmacyDashboardCart />} />
+        <Route path='pharmacycheckout' element={<PharmacyDashboardCheckout />} />
+        <Route path='pharmacyinvoice' element={<PharmacyDashboardInvoice />} />
+        <Route path='pharmacysettings' element={<PharmacyDashboardSettings />} />
+      </Route>
+      <Route path='/admin'>
+        <Route path='' element={<AdminDashboard />} />
+        <Route path='admindoctors' element={<AdminDashboardDoctors />} />
+      </Route>
+      <Route path='/'>
+        <Route path='' element={<Home />} />
+        <Route path='login' element={<Login />} />
+        <Route path='signup' element={<Signup />} />
+        <Route path='otp' element={<OTP />} />
+        <Route path='doctors' element={<DoctorList />} />
+        <Route path='appointmentslotsdates' element={<DatesSlots />} />
+        <Route path='patientdetails' element={<PatientDetails />} />
+        <Route path='payment' element={<Payment />} />
+      </Route>
+      <Route path='/doctordashboard'>
+        <Route path='' element={<DoctorDashboard />} />
+      </Route>
+    </>
+  )
+);
 
 function App() {
   return (
     <>
-      {/* <Test /> */}
-      {/* <DoctorDashboard /> */}
-      {/* <Home /> */}
-      {/* <Login /> */}
-      {/* <Signup /> */}
-      {/* <OTP /> */}
-      {/* <DoctorList /> */}
-      {/* <PatientDashboard /> */}
-      {/* <PatientDashboardBookAppointment /> */}
-      {/* <PatientDashboardPastAppointment /> */}
-      {/* <PatientDashboardPrescription /> */}
-      {/* <PatientDashboardSettings /> */}
-      {/* <DoctorDashboard /> */}
-      {/* <DoctorDashboardListAppointments /> */}
-      {/* <DoctorDashboardPatientDetail /> */}
-      {/* <PharmacyDashboard /> */}
-      {/* <PharmacyDashboardMedicineList /> */}
-      {/* <PharmacyDashboardAddMedicine /> */}
-      {/* <PharmacyDashboardPrescriptionList /> */}
-      <PharmacyDashboardCart />
-      {/* <PharmacyDashboardCheckout /> */}
-      {/* <PharmacyDashboardInvoice /> */}
+      <RouterProvider router={router}>
+        <ScrollToTop />
+      </RouterProvider>
     </>
   )
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
@@ -55,7 +56,7 @@ function Signup() {
           </div>
 
           <div className="mt-2 mx-10 flex">
-            <button className="text-white bg-[#0CC1E0] p-2 rounded-xl font-medium hover:bg-gray-400 hover:text-black flex-grow"><span className="flex items-center justify-center gap-2">Continue<i class="fa-solid fa-arrow-right-long"></i></span></button>
+            <Link to='/otp' className="text-white bg-[#0CC1E0] p-2 rounded-xl font-medium hover:bg-gray-400 hover:text-black flex-grow"><span className="flex items-center justify-center gap-2">Continue<i class="fa-solid fa-arrow-right-long"></i></span></Link>
           </div>
         </section>
       </main>
