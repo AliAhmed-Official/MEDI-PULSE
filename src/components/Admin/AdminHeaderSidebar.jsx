@@ -107,30 +107,23 @@ function AdminHeaderSidebar() {
           </div>
 
           <div className='px-2'>
-            <NavLink to='' className={({ isActive }) => `p-3 rounded-lg text-xl flex items-center gap-2 hover:bg-[#F0F3FB] cursor-pointer ${isActive ? 'bg-[#F0F3FB]' : 'bg-transparent'}`}>
+            <NavLink to='/admin/adminstaff' className={({ isActive }) => `p-3 rounded-lg text-xl flex items-center gap-2 hover:bg-[#F0F3FB] cursor-pointer ${isActive ? 'bg-[#F0F3FB]' : 'bg-transparent'}`}>
               <i className="fa-solid fa-users w-6 text-center"></i>
               <p className='text-lg'>Staff</p>
             </NavLink>
           </div>
 
           <div className='px-2'>
-            <NavLink to='' className={({ isActive }) => `p-3 rounded-lg text-xl flex items-center gap-2 hover:bg-[#F0F3FB] cursor-pointer ${isActive ? 'bg-[#F0F3FB]' : 'bg-transparent'}`}>
+            <NavLink to='/admin/admindepartment' className={({ isActive }) => `p-3 rounded-lg text-xl flex items-center gap-2 hover:bg-[#F0F3FB] cursor-pointer ${isActive ? 'bg-[#F0F3FB]' : 'bg-transparent'}`}>
               <i className="fa-solid fa-hospital w-6 text-center"></i>
               <p className='text-lg'>Departments</p>
             </NavLink>
           </div>
 
           <div className='px-2'>
-            <NavLink to='' className={({ isActive }) => `p-3 rounded-lg text-xl flex items-center gap-2 hover:bg-[#F0F3FB] cursor-pointer ${isActive ? 'bg-[#F0F3FB]' : 'bg-transparent'}`}>
+            <NavLink to='/admin/adminemergencyslots' className={({ isActive }) => `p-3 rounded-lg text-xl flex items-center gap-2 hover:bg-[#F0F3FB] cursor-pointer ${isActive ? 'bg-[#F0F3FB]' : 'bg-transparent'}`}>
               <i className="fa-solid fa-bed-pulse w-6 text-center"></i>
               <p className='text-lg'>Emergency Slots</p>
-            </NavLink>
-          </div>
-
-          <div className='px-2'>
-            <NavLink to='' className={({ isActive }) => `p-3 rounded-lg text-xl flex items-center gap-2 hover:bg-[#F0F3FB] cursor-pointer ${isActive ? 'bg-[#F0F3FB]' : 'bg-transparent'}`}>
-              <i className="fa-solid fa-gear w-6 text-center"></i>
-              <p className='text-lg'>Settings</p>
             </NavLink>
           </div>
 

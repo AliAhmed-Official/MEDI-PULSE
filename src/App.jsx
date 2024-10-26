@@ -19,7 +19,15 @@ import PharmacyDashboardInvoice from './pages/PharmacyDashboardInvoice';
 import PharmacyDashboardSettings from './pages/PharmacyDashboardSettings.jsx';
 import AdminDashboard from './pages/AdminDashboard.jsx';
 import AdminDashboardDoctors from './pages/AdminDashboardDoctors.jsx';
+import AdminDashboardStaff from './pages/AdminDashboardStaff.jsx';
+import AdminDashboardDepartments from './pages/AdminDashboardDepartments.jsx';
+import AdminDashboardEmergencySlots from './pages/AdminDashboardEmergencySlots.jsx';
 import DoctorDashboard from './pages/DoctorDashboard.jsx';
+import PatientDashboard from './pages/PatientDashboard.jsx';
+import PatientDashboardPastAppointment from './pages/PatientDashboardPastAppointment.jsx';
+import PatientDashboardPrescription from './pages/PatientDashboardPrescription.jsx';
+import DoctorDashboardListAppointments from './pages/DoctorDashboardListAppointments.jsx';
+import PatientDetailCard from './components/Doctor/PatientDetailCard.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -37,6 +45,9 @@ const router = createBrowserRouter(
       <Route path='/admin'>
         <Route path='' element={<AdminDashboard />} />
         <Route path='admindoctors' element={<AdminDashboardDoctors />} />
+        <Route path='adminstaff' element={<AdminDashboardStaff />} />
+        <Route path='admindepartment' element={<AdminDashboardDepartments />} />
+        <Route path='adminemergencyslots' element={<AdminDashboardEmergencySlots />} />
       </Route>
       <Route path='/'>
         <Route path='' element={<Home />} />
@@ -50,7 +61,15 @@ const router = createBrowserRouter(
       </Route>
       <Route path='/doctordashboard'>
         <Route path='' element={<DoctorDashboard />} />
+        <Route path='doctordashboardlistappointments' element={<DoctorDashboardListAppointments />} />
+        <Route path='patientdetailcard' element={<PatientDetailCard />} />
       </Route>
+      <Route path='/patientdashboard'>
+        <Route path='' element={<PatientDashboard />} />
+        <Route path='patientdashboardprescription' element={<PatientDashboardPrescription />} />
+        <Route path='patientdashboardpastappointment' element={<PatientDashboardPastAppointment />} />
+      </Route>
+
     </>
   )
 );
