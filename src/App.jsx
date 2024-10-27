@@ -27,7 +27,11 @@ import PatientDashboard from './pages/PatientDashboard.jsx';
 import PatientDashboardPastAppointment from './pages/PatientDashboardPastAppointment.jsx';
 import PatientDashboardPrescription from './pages/PatientDashboardPrescription.jsx';
 import DoctorDashboardListAppointments from './pages/DoctorDashboardListAppointments.jsx';
-import PatientDetailCard from './components/Doctor/PatientDetailCard.jsx';
+import ReceptionistDashboard from './pages/ReceptionistDashboard.jsx';
+import ReceptionistDashboardDoctors from './pages/ReceptionistDashboardDoctors.jsx';
+import ReceptionistDashboardAppointments from './pages/ReceptionistDashboardAppointments.jsx';
+import ReceptionistDashboardSettings from './pages/ReceptionistDashboardSettings.jsx';
+import ConsultationInvoice from './components/ConsultationInvoice.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -62,14 +66,19 @@ const router = createBrowserRouter(
       <Route path='/doctordashboard'>
         <Route path='' element={<DoctorDashboard />} />
         <Route path='doctordashboardlistappointments' element={<DoctorDashboardListAppointments />} />
-        <Route path='patientdetailcard' element={<PatientDetailCard />} />
       </Route>
       <Route path='/patientdashboard'>
         <Route path='' element={<PatientDashboard />} />
         <Route path='patientdashboardprescription' element={<PatientDashboardPrescription />} />
         <Route path='patientdashboardpastappointment' element={<PatientDashboardPastAppointment />} />
       </Route>
-
+      <Route path='/receptionistdashboard'>
+        <Route path='' element={<ReceptionistDashboard />} />
+        <Route path='doctors' element={<ReceptionistDashboardDoctors />} />
+        <Route path='appointments' element={<ReceptionistDashboardAppointments />} />
+        <Route path='settings' element={<ReceptionistDashboardSettings />} />
+        <Route path='appointments/consultationinvoice' element={<ConsultationInvoice />} />
+      </Route>
     </>
   )
 );
