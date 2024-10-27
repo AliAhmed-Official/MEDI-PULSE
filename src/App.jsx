@@ -32,6 +32,10 @@ import ReceptionistDashboardDoctors from './pages/ReceptionistDashboardDoctors.j
 import ReceptionistDashboardAppointments from './pages/ReceptionistDashboardAppointments.jsx';
 import ReceptionistDashboardSettings from './pages/ReceptionistDashboardSettings.jsx';
 import ConsultationInvoice from './components/ConsultationInvoice.jsx';
+import FinanceDashboard from './pages/FinanceDashboard.jsx';
+import FinanceDashboardConsultationInvoices from './pages/FinanceDashboardConsultationInvoices.jsx';
+import FinanceDashboardMedicationInvoices from './pages/FinanceDashboardMedicationInvoices.jsx';
+import FinanceDashboardSettings from './pages/FinanceDashboardSettings.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -78,6 +82,12 @@ const router = createBrowserRouter(
         <Route path='appointments' element={<ReceptionistDashboardAppointments />} />
         <Route path='settings' element={<ReceptionistDashboardSettings />} />
         <Route path='appointments/consultationinvoice' element={<ConsultationInvoice />} />
+      </Route>
+      <Route path='/financedashboard'>
+        <Route path='' element={<FinanceDashboard />} />
+        <Route path='consultationinvoices' element={<FinanceDashboardConsultationInvoices />} />
+        <Route path='medicationinvoices' element={<FinanceDashboardMedicationInvoices />} />
+        <Route path='settings' element={<FinanceDashboardSettings />} />
       </Route>
     </>
   )
