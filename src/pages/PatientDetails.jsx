@@ -1,8 +1,25 @@
-import { React } from 'react';
+import { React, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header/Header';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function PatientDetails() {
+  const notify = () => {
+    toast.warn("We have seen an emergency situation while analyzing your health data", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
+  useEffect(() => {
+    notify();
+  }, [])
   return (
     <>
       <Header />
@@ -97,6 +114,10 @@ function PatientDetails() {
             <p className='text-center'>Confirm Booking</p>
           </div>
         </Link>
+      </div>
+
+      <div>
+        <ToastContainer />
       </div>
     </>
   )

@@ -3,7 +3,7 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
 function Login() {
-  const [selectedAccountType, setSelectedAccountType] = useState(null);
+  const [selectedAccountType, setSelectedAccountType] = useState('Patient');
   const handleClick = (accountType) => {
     setSelectedAccountType(accountType);
   };
@@ -36,26 +36,26 @@ function Login() {
           </h3>
 
           <div className="mx-2 md:mx-0.5 mt-5 flex justify-center md:justify-evenly gap-1 flex-wrap">
-            <div className={`border-2 border-solid cursor-pointer max-w-28 min-w-28 max-h-64 ${selectedAccountType === "Patient" ? "border-green-500 shadow-full shadow-green-500" : "border-[#0CC1E0]"}`} onClick={() => handleClick("Patient")}>
+            <div className={`border-2 border-solid cursor-pointer min-w-24 max-w-24 md:max-w-24 md:min-w-24 lg:min-w-28 lg:max-w-28 sm:max-w-28 sm:min-w-28 max-h-64 ${selectedAccountType === "Patient" ? "border-green-500 shadow-full shadow-green-500" : "border-[#0CC1E0]"}`} onClick={() => handleClick("Patient")}>
               <img src="/public/images/patient.png" alt="Patient Avatar Image" className="" />
               <p className="text-center mb-2 font-medium">Patient</p>
             </div>
 
-            <div className={`border-2 border-solid cursor-pointer max-w-28 min-w-28 max-h-64 ${selectedAccountType === "Doctor" ? "border-green-500 shadow-full shadow-green-500" : "border-[#0CC1E0]"}`} onClick={() => handleClick("Doctor")}>
+            <div className={`border-2 border-solid cursor-pointer min-w-24 max-w-24 md:max-w-24 md:min-w-24 lg:min-w-28 lg:max-w-28 sm:max-w-28 sm:min-w-28 max-h-64 ${selectedAccountType === "Doctor" ? "border-green-500 shadow-full shadow-green-500" : "border-[#0CC1E0]"}`} onClick={() => handleClick("Doctor")}>
               <img src="/public/images/doctorlogin.png" alt="Doctor Avatar Image" className="" />
               <p className="text-center mb-2 font-medium">Doctor</p>
             </div>
 
-            <div className={`border-2 border-solid cursor-pointer max-w-28 min-w-28 max-h-64 ${selectedAccountType === "Admin" ? "border-green-500 shadow-full shadow-green-500" : "border-[#0CC1E0]"}`} onClick={() => handleClick("Admin")}>
-              <img src="/public/images/admin.png" alt="Admin Avatar Image" className="" />
-              <p className="text-center mb-2 font-medium">Admin</p>
+            <div className={`border-2 border-solid cursor-pointer min-w-24 max-w-24 md:max-w-24 md:min-w-24 lg:min-w-28 lg:max-w-28 sm:max-w-28 sm:min-w-28 max-h-64 ${selectedAccountType === "Employee" ? "border-green-500 shadow-full shadow-green-500" : "border-[#0CC1E0]"}`} onClick={() => handleClick("Employee")}>
+              <img src="/public/images/admin.png" alt="Employee Avatar Image" className="" />
+              <p className="text-center mb-2 font-medium">Employee</p>
             </div>
           </div>
 
           <div className="mt-5 mx-10">
-            {(selectedAccountType === "Doctor" || selectedAccountType === "Admin") ?
+            {(selectedAccountType === "Doctor" || selectedAccountType === "Employee") ?
               <>
-                {selectedAccountType === "Doctor" ? <p className="text-center text-sm text-gray-400">Hello Doctor<br /> Please fill out the form below to get started</p> : <p className="text-center text-sm text-gray-400">Hello Admin<br /> Please fill out the form below to get started</p>}
+                {selectedAccountType === "Doctor" ? <p className="text-center text-sm text-gray-400">Hello Doctor<br /> Please fill out the form below to get started</p> : <p className="text-center text-sm text-gray-400">Hello Employee<br /> Please fill out the form below to get started</p>}
 
                 <div className="relative w-full mt-7">
                   <div className={`flex items-center border-2 rounded-lg ${focusState.firstInput ? "border-[#0CC1E0]" : "border-gray-300"

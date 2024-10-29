@@ -1,5 +1,4 @@
 import { React, useState } from 'react';
-import DoctorDashboardSidebar from '../components/DashboardSidebar/DoctorDashboardSidebar';
 
 function DoctorDashboardPatientDetail() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

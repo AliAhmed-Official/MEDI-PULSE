@@ -1,11 +1,18 @@
 import { React, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import HomeCard from '../components/Cards/HomeCard';
 import ConsultDoctorCard from '../components/Cards/ConsultDoctorCard';
 
 function Home() {
+  const [heroText] = useTypewriter({
+    words: ['Book Online or Visit Us...', 'Your health, our priority...'],
+    loop: {},
+    typeSpeed: 120,
+    deleteSpeed: 80
+  })
   const [isOverlayVisible, setOverlayVisible] = useState(false);
   const toggleOverlay = () => {
     setOverlayVisible(!isOverlayVisible);
@@ -33,19 +40,17 @@ function Home() {
       <Header />
       <main className='mb-20 mx-6 md:mx-10'>
         <section className='mt-10 bg-[#E4F6F9] rounded-3xl min-h-[450px] flex lg:justify-between lg:items-center lg:flex-row flex-col -mx-3 lg:-mx-0'>
-          {/* Left arrow button (Desktop only) */}
           <div className="ml-3 rounded-full lg:min-w-11 lg:flex lg:justify-center lg:items-center hidden">
             <div className="rounded-full bg-[#0CC1E0] h-10 w-10 flex justify-center items-center cursor-pointer">
               <i className="fa-solid fa-arrow-left fa-xl" style={{ color: '#fff' }}></i>
             </div>
           </div>
 
-          {/* Main Hero Section */}
           <div className="h-full flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center mx-3 lg:mx-12 mt-4 lg:mt-0 items-center overflow-hidden">
-            <div className="lg:w-full lg:mr-10">
-              <div className='lg:text-4xl text-3xl font-semibold lg:text-left flex flex-col gap-2'>
-                <h1>
-                  Your Trusted Care is Just a Click Away <span className="text-[#0CC1E0]">Book Online or Visit Us</span>
+            <div className="lg:w-full lg:mr-10 animate-slide-in">
+              <div className='lg:text-4xl text-2xl sm:text-3xl font-semibold lg:text-left flex flex-col gap-2 '>
+                <h1 className=''>
+                  Your Trusted Care is Just a Click Away <br />  <span className="text-[#0CC1E0]">{heroText}</span><span className='text-[#0cc1e0]'><Cursor /></span>
                 </h1>
 
               </div>
@@ -101,7 +106,7 @@ function Home() {
                   </div>
                 </div>
                 {/* Find Now button */}
-                <button className="uppercase bg-[#0CC1E0] p-2 lg:p-3 px-5 lg:px-8 rounded-3xl text-white font-semibold lg:block hover:text-[#0CC1E0] hover:bg-white hover:shadow-full shadow-[#0CC1E0]">
+                <button className="uppercase bg-[#0CC1E0] p-2 lg:p-3 px-5 lg:px-8 rounded-3xl text-white font-semibold lg:block hover:text-[#0CC1E0] hover:bg-white hover:shadow-full shadow-[#0CC1E0] shine-effect">
                   Find Now
                 </button>
               </div>
@@ -113,14 +118,12 @@ function Home() {
             </div>
           </div>
 
-          {/* Right arrow button (Desktop only) */}
           <div className="mr-3 rounded-full lg:min-w-11 lg:flex justify-center items-center hidden">
             <div className="rounded-full bg-[#0CC1E0] h-10 w-10 flex justify-center items-center cursor-pointer">
               <i className="fa-solid fa-arrow-right fa-xl" style={{ color: '#fff' }}></i>
             </div>
           </div>
 
-          {/* Arrow buttons for mobile */}
           <div className="flex lg:hidden justify-end mr-5 mb-5 space-x-2">
             <div className="rounded-full bg-[#0CC1E0] p-2 px-3">
               <i className="fa-solid fa-arrow-left" style={{ color: '#fff' }}></i>
@@ -147,18 +150,32 @@ function Home() {
               <p>Consult best doctors</p>
               <p className='text-[#0CC1E0] cursor-pointer' onClick={toggleOverlay}>View All</p>
             </div>
-            <div className='gap-8 justify-center md:justify-start flex flex-wrap'>
-              <ConsultDoctorCard image='/public/images/ent-specialist.png' title='ENT Specialist' />
-              <ConsultDoctorCard image='/public/images/eye-specialist.png' title='Eye Specialist' />
-              <ConsultDoctorCard image='/public/images/child-specialist.png' title='Child Specialist' />
-              <ConsultDoctorCard image='/public/images/skin-specialist.png' title='Skin Specialist' />
-              <ConsultDoctorCard image='/public/images/dentist.png' title='Dentist' />
-              <ConsultDoctorCard image='/public/images/nutritionist.png' title='Nutritionist' />
-              <ConsultDoctorCard image='/public/images/diabetologist.png' title='Diabetologist' />
-              <ConsultDoctorCard image='/public/images/blood-specialist.png' title='Hematologist' />
+
+            <div className='marquee-wrapper overflow-hidden'>
+              <div className='marquee flex gap-8'>
+                <ConsultDoctorCard image='/public/images/ent-specialist.png' title='ENT Specialist' />
+                <ConsultDoctorCard image='/public/images/eye-specialist.png' title='Eye Specialist' />
+                <ConsultDoctorCard image='/public/images/child-specialist.png' title='Child Specialist' />
+                <ConsultDoctorCard image='/public/images/skin-specialist.png' title='Skin Specialist' />
+                <ConsultDoctorCard image='/public/images/dentist.png' title='Dentist' />
+                <ConsultDoctorCard image='/public/images/nutritionist.png' title='Nutritionist' />
+                <ConsultDoctorCard image='/public/images/diabetologist.png' title='Diabetologist' />
+                <ConsultDoctorCard image='/public/images/blood-specialist.png' title='Hematologist' />
+
+                {/* Duplicate cards to create an infinite scroll effect */}
+                <ConsultDoctorCard image='/public/images/ent-specialist.png' title='ENT Specialist' />
+                <ConsultDoctorCard image='/public/images/eye-specialist.png' title='Eye Specialist' />
+                <ConsultDoctorCard image='/public/images/child-specialist.png' title='Child Specialist' />
+                <ConsultDoctorCard image='/public/images/skin-specialist.png' title='Skin Specialist' />
+                <ConsultDoctorCard image='/public/images/dentist.png' title='Dentist' />
+                <ConsultDoctorCard image='/public/images/nutritionist.png' title='Nutritionist' />
+                <ConsultDoctorCard image='/public/images/diabetologist.png' title='Diabetologist' />
+                <ConsultDoctorCard image='/public/images/blood-specialist.png' title='Hematologist' />
+              </div>
             </div>
           </div>
         </section>
+
 
         {isOverlayVisible ?
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50" onClick={toggleOverlay}>

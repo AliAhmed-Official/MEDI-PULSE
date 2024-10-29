@@ -5,6 +5,10 @@ import Home from './pages/Home.jsx';
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 import OTP from './pages/OTP.jsx';
+import VideoCall from './pages/VideoCall.jsx';
+import JoinCall from './pages/JoinCall.jsx';
+import DoctorReview from './pages/DoctorReview.jsx';
+import ContactUs from './pages/ContactUs.jsx';
 import DoctorList from './pages/DoctorList.jsx';
 import DatesSlots from './pages/DatesSlots.jsx';
 import PatientDetails from './pages/PatientDetails.jsx';
@@ -63,9 +67,13 @@ const router = createBrowserRouter(
         <Route path='signup' element={<Signup />} />
         <Route path='otp' element={<OTP />} />
         <Route path='doctors' element={<DoctorList />} />
+        <Route path='contactus' element={<ContactUs />} />
         <Route path='appointmentslotsdates' element={<DatesSlots />} />
         <Route path='patientdetails' element={<PatientDetails />} />
         <Route path='payment' element={<Payment />} />
+        <Route path='joincall' element={<JoinCall />} />
+        <Route path='videocall' element={<VideoCall />} />
+        <Route path='doctorreview' element={<DoctorReview />} />
       </Route>
       <Route path='/doctordashboard'>
         <Route path='' element={<DoctorDashboard />} />

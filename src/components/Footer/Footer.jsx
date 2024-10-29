@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
     <>
@@ -16,10 +18,9 @@ function Footer() {
         <div className="text-md md:mx-28 md:mt-0 mt-5">
           <ul className="md:space-y-8 space-y-3">
             <li><span className="font-semibold text-md">Links</span></li>
-            <li className="cursor-pointer hover:text-[#0CC1E0]"><span>Home</span></li>
-            <li className="cursor-pointer hover:text-[#0CC1E0]"><span>Doctors</span></li>
-            <li className="cursor-pointer hover:text-[#0CC1E0]"><span>Contact</span></li>
-            <li className="cursor-pointer hover:text-[#0CC1E0]"><span>About</span></li>
+            <li className="cursor-pointer hover:text-[#0CC1E0]"><span><Link to='/'>Home</Link></span></li>
+            <li className="cursor-pointer hover:text-[#0CC1E0]"><span><Link to='/doctors'>Doctors</Link></span></li>
+            <li className="cursor-pointer hover:text-[#0CC1E0]"><span><Link to='/contactus'>Contact</Link></span></li>
           </ul>
         </div>
 
