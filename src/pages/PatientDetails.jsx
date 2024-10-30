@@ -38,6 +38,17 @@ function PatientDetails() {
                   <input type="text" className='w-full p-2 border-2 rounded-lg outline-none focus:shadow-[#0CC1E0]' placeholder='Enter name...' />
                 </div>
                 <div className='space-y-1'>
+                  <label htmlFor="" className=''>Gender:</label><br />
+                  <select name="" className='w-full p-2 border-2 rounded-lg outline-none'>
+                    <option value="">Male</option>
+                    <option value="">Female</option>
+                  </select>
+                </div>
+                <div className='space-y-1'>
+                  <label htmlFor="" className=''>Age:</label><br />
+                  <input type="text" className='w-full p-2 border-2 rounded-lg outline-none focus:shadow-[#0CC1E0]' placeholder='Enter age...' />
+                </div>
+                <div className='space-y-1'>
                   <label htmlFor="" className=''>Relation:</label><br />
                   <select name="" className='w-full p-2 border-2 rounded-lg outline-none'>
                     <option value="">Self</option>

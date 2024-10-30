@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import PatientHeaderSidebar from '../components/Patient/PatientHeaderSidebar';
+import DoctorHeaderSidebar from '../components/Doctor/DoctorHeaderSidebar';
 import TableSearchBar from '../components/TableSearchbar';
 
-function PatientDashboardPastAppointment() {
+function DoctorDashboardPastPrescriptions() {
   const [isOverlayVisible, setOverlayVisible] = useState(false);
   const toggleOverlay = () => {
     setOverlayVisible(!isOverlayVisible);
@@ -10,13 +10,13 @@ function PatientDashboardPastAppointment() {
   const tableheaders = ['Appointment ID', 'Date of Appointment', 'Time of Appointment', 'Patient Name', 'Doctor Name', 'Doctor Specialty', 'Appointment Type', 'Prescription',];
   return (
     <>
-      <PatientHeaderSidebar />
+      <DoctorHeaderSidebar />
       <main className='bg-[#F0F3FB] mt-[60px] z-0 lg:ml-[260px] h-screen'>
         <div className='m-5 flex items-center gap-3 text-gray-500'>
           <p className='text-xl md:text-2xl font-semibold'>Dashboard</p>
           <p><i className="fa-solid fa-chevron-right text-sm"></i></p>
-          <p className='text-xl md:text-2xl font-semibold'>Past Appointments</p>
-          <i className="fa-solid fa-clipboard-list text-center text-xl md:text-2xl"></i>
+          <p className='text-xl md:text-2xl font-semibold'>Past Prescriptions</p>
+          <i className="fa-solid fa-pills text-center text-xl md:text-2xl"></i>
         </div>
 
         <div className='m-5'>
@@ -113,7 +113,7 @@ function PatientDashboardPastAppointment() {
             </div>
 
             <div className='flex justify-center gap-4 items-center'>
-              <i className="fa-solid fa-print text-3xl text-red-500 cursor-pointer"></i>
+              <p className='bg-[#0cc1e0] p-2 text-white font-semibold cursor-pointer rounded-md'>Prescribe Again</p>
             </div>
 
           </div>
@@ -123,4 +123,4 @@ function PatientDashboardPastAppointment() {
   )
 }
 
-export default PatientDashboardPastAppointment;
+export default DoctorDashboardPastPrescriptions;

@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-function DoctorHeaderSidebar() {
+function PatientHeaderSidebar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isprofileDropMenuOpen, setProfileDropMenuOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState('translate-x-[-100%]');
@@ -69,17 +69,16 @@ function DoctorHeaderSidebar() {
             </div>
           </div>
         </div>
-
       </header>
 
-      <div className={` max-w-[260px] min-w-[260px] overflow-y-auto z-40 fixed mt-[60px] pt-7 items-center transition-transform duration-300 ease-in-out bg-white ${isSidebarOpen} lg:translate-x-0`} style={{ height: 'calc(100vh - 60px)' }}>
+      <div className={` max-w-[260px] min-w-[260px] overflow-y-auto z-50 fixed mt-[60px] pt-7 items-center transition-transform duration-300 ease-in-out bg-white ${isSidebarOpen} lg:translate-x-0`} style={{ height: 'calc(100vh - 60px)' }}>
         <div className='flex flex-col items-center mb-5'>
           <div className='w-[70px] h-[70px] rounded-lg shadow-full'>
-            <img src="/public/images/ME.jpeg" alt="Patient Image" className='rounded-lg max-w-full min-w-full min-h-full max-h-full' />
+            <img src="/public/images/me.jpeg" alt="Patient Image" className='rounded-lg max-w-full min-w-full min-h-full max-h-full' />
           </div>
           <div className='text-center space-y-1 mt-3'>
             <p className='font-medium'>Ali Ahmed</p>
-            <p className='text-sm'>Doctor</p>
+            <p className='text-sm'>Patient</p>
           </div>
         </div>
 
@@ -89,31 +88,31 @@ function DoctorHeaderSidebar() {
           </div>
 
           <div className='px-2'>
-            <NavLink to='/doctordashboard' end className={({ isActive }) => `p-3 rounded-lg text-xl flex items-center gap-2 cursor-pointer ${isActive ? "bg-[#F0F3FB]" : "bg-transparent"} hover:bg-[#F0F3FB]`}>
+            <NavLink to='/patientdashboard' end className={({ isActive }) => `p-3 rounded-lg text-xl flex items-center gap-2 cursor-pointer ${isActive ? "bg-[#F0F3FB]" : "bg-transparent"} hover:bg-[#F0F3FB]`}>
               <i className="fas fa-columns w-6 text-center"></i>
               <p className='text-lg'>Dashboard</p>
             </NavLink>
           </div>
 
           <div className='px-2'>
-            <NavLink to='/doctordashboard/doctordashboardlistappointments' className={({ isActive }) => `p-3 rounded-lg text-xl flex items-center gap-2 cursor-pointer ${isActive ? "bg-[#F0F3FB]" : "bg-transparent"} hover:bg-[#F0F3FB]`}>
+            <NavLink to='/patientdashboard/pastappointments' className={({ isActive }) => `p-3 rounded-lg text-xl flex items-center gap-2 cursor-pointer ${isActive ? "bg-[#F0F3FB]" : "bg-transparent"} hover:bg-[#F0F3FB]`}>
               <i className="fa-solid fa-clipboard-list w-6 text-center"></i>
-              <p className='text-lg'>Appointments</p>
+              <p className='text-lg'>Past Appointments</p>
             </NavLink>
           </div>
 
           <div className='px-2'>
-            <NavLink to='/doctordashboard/doctordashboardpastprescriptions' className={({ isActive }) => `p-3 rounded-lg text-xl flex items-center gap-2 cursor-pointer ${isActive ? "bg-[#F0F3FB]" : "bg-transparent"} hover:bg-[#F0F3FB]`}>
-              <i className="fa-solid fa-pills w-6 text-center"></i>
-              <p className='text-lg'>Past Prescriptions</p>
+            <NavLink to='/patientdashboard/transcriptions' className={({ isActive }) => `p-3 rounded-lg text-xl flex items-center gap-2 cursor-pointer ${isActive ? "bg-[#F0F3FB]" : "bg-transparent"} hover:bg-[#F0F3FB]`}>
+              <i className="fa-solid fa-file-lines w-6 text-center"></i>
+              <p className='text-lg'>Transcriptions</p>
             </NavLink>
           </div>
 
           <div className='px-2'>
-            <div className='p-3 rounded-lg text-xl flex items-center gap-2 hover:bg-[#F0F3FB] cursor-pointer'>
+            <NavLink to='/patientdashboard/settings' className={({ isActive }) => `p-3 rounded-lg text-xl flex items-center gap-2 cursor-pointer ${isActive ? "bg-[#F0F3FB]" : "bg-transparent"} hover:bg-[#F0F3FB]`}>
               <i className="fa-solid fa-gear w-6 text-center"></i>
               <p className='text-lg'>Settings</p>
-            </div>
+            </NavLink>
           </div>
 
           <div className='px-2'>
@@ -128,4 +127,4 @@ function DoctorHeaderSidebar() {
   )
 }
 
-export default DoctorHeaderSidebar;
+export default PatientHeaderSidebar;

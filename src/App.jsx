@@ -27,9 +27,12 @@ import AdminDashboardStaff from './pages/AdminDashboardStaff.jsx';
 import AdminDashboardDepartments from './pages/AdminDashboardDepartments.jsx';
 import AdminDashboardEmergencySlots from './pages/AdminDashboardEmergencySlots.jsx';
 import DoctorDashboard from './pages/DoctorDashboard.jsx';
+import DoctorDashboardPastPrescriptions from './pages/DoctorDashboardPastPrescriptions.jsx';
+import PatientDetailCard from './components/Doctor/PatientDetailCard.jsx';
 import PatientDashboard from './pages/PatientDashboard.jsx';
 import PatientDashboardPastAppointment from './pages/PatientDashboardPastAppointment.jsx';
-import PatientDashboardPrescription from './pages/PatientDashboardPrescription.jsx';
+import PatientDashboardTranscription from './pages/PatientDashboardTranscription.jsx';
+import PatientDashboardSettings from './pages/PatientDashboardSettings.jsx';
 import DoctorDashboardListAppointments from './pages/DoctorDashboardListAppointments.jsx';
 import ReceptionistDashboard from './pages/ReceptionistDashboard.jsx';
 import ReceptionistDashboardDoctors from './pages/ReceptionistDashboardDoctors.jsx';
@@ -78,11 +81,14 @@ const router = createBrowserRouter(
       <Route path='/doctordashboard'>
         <Route path='' element={<DoctorDashboard />} />
         <Route path='doctordashboardlistappointments' element={<DoctorDashboardListAppointments />} />
+        <Route path='doctordashboardpastprescriptions' element={<DoctorDashboardPastPrescriptions />} />
+        <Route path='doctordashboardpatientdetail' element={<PatientDetailCard />} />
       </Route>
       <Route path='/patientdashboard'>
         <Route path='' element={<PatientDashboard />} />
-        <Route path='patientdashboardprescription' element={<PatientDashboardPrescription />} />
-        <Route path='patientdashboardpastappointment' element={<PatientDashboardPastAppointment />} />
+        <Route path='transcriptions' element={<PatientDashboardTranscription />} />
+        <Route path='pastappointments' element={<PatientDashboardPastAppointment />} />
+        <Route path='settings' element={<PatientDashboardSettings />} />
       </Route>
       <Route path='/receptionistdashboard'>
         <Route path='' element={<ReceptionistDashboard />} />

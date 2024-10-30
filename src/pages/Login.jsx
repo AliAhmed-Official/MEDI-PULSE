@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
@@ -134,22 +135,28 @@ function Login() {
               : null}
           </div>
 
-          {selectedAccountType ?
-            <>
-              <div className="mt-2 mx-10">
-                <div className="flex justify-between items-center">
-                  <div className="flex flex-col gap-4">
-                    <button className="text-[12px] text-gray-400 hover:text-[#0CC1E0] cursor-pointer text-start">Forget Password?</button>
-                    {selectedAccountType === "Patient" ?
-                      <>
-                        <p className="text-[12px]">Don't have an account? <button className="text-[#0CC1E0]">Signup</button></p>
-                      </> : null}
-                  </div>
-                  <button className="text-white bg-[#0CC1E0] p-2 px-3 rounded-xl font-medium hover:bg-gray-400 hover:text-black">Login</button>
-                </div>
+
+          <div className="mt-2 mx-10">
+            <div className="flex justify-between items-center">
+              <div className="flex flex-col gap-4">
+                <button className="text-[12px] text-gray-400 hover:text-[#0CC1E0] cursor-pointer text-start">Forget Password?</button>
+                {selectedAccountType === "Patient" ?
+                  <>
+                    <p className="text-[12px]">Don't have an account? <button className="text-[#0CC1E0]">Signup</button></p>
+                  </> : null}
               </div>
-            </>
-            : null}
+              {selectedAccountType === "Patient" ? <>
+                <Link to='/patientdashboard' className="text-white bg-[#0CC1E0] p-2 px-3 rounded-xl font-medium hover:bg-gray-400 hover:text-black">Login</Link>
+              </> : null}
+              {selectedAccountType === "Employee" ? <>
+                <Link to='/admin' className="text-white bg-[#0CC1E0] p-2 px-3 rounded-xl font-medium hover:bg-gray-400 hover:text-black">Login</Link>
+              </> : null}
+              {selectedAccountType === "Doctor" ? <>
+                <Link to='/doctordashboard' className="text-white bg-[#0CC1E0] p-2 px-3 rounded-xl font-medium hover:bg-gray-400 hover:text-black">Login</Link>
+              </> : null}
+
+            </div>
+          </div>
 
         </section>
       </main>

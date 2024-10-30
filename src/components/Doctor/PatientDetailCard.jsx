@@ -2,19 +2,22 @@ import React, { useState } from 'react';
 
 function PatientDetailCard() {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [rows, setRows] = useState([{ medicineName: '', dosage: '', note: '' }]);
+  const [rows, setRows] = useState([{ medicineName: '', dosage: '', frequency: '', dosage: '', note: '' }]);
   const addRow = () => {
-    setRows([...rows, { medicineName: '', dosage: '', note: '' }]);
+    setRows([...rows, { medicineName: '', dosage: '', frequency: '', dosage: '', note: '' }]);
   };
   const handleInputChange = (index, field, value) => {
     const newRows = [...rows];
     newRows[index][field] = value;
     setRows(newRows);
   };
-
+  const pdfUrl = '/C:/Users/hp/Desktop/testing.pdf';
+  const openPdf = () => {
+    window.open(pdfUrl, '_blank', 'noopener,noreferrer');
+  };
   return (
     <>
-      <div className=" h-[550px] lg:h-[520px] rounded-xl shadow-full m-2 overflow-hidden relative">
+      <div className="h-[550px] lg:h-[520px] rounded-xl shadow-full m-2 overflow-hidden relative">
         <div
           id="boxContent"
           className="relative w-full h-full"
@@ -76,12 +79,23 @@ function PatientDetailCard() {
               </div>
             </div>
 
-            <div className='flex mt-7 lg:mt-5 mb-5 justify-center lg:justify-end lg:mr-5 gap-10'>
-              <button id="voiceRecorderBtn" class="w-9 lg:w-12 h-9 lg:h-12 bg-red-500 text-white rounded-full flex justify-center items-center hover:bg-red-600 transition duration-300 ease-in-out focus:outline-none relative">
-                <i class="fa-solid fa-microphone lg:fa-lg"></i>
-                <span id="pulseEffect" class="absolute w-full h-full rounded-full bg-red-400 opacity-75 scale-125 hidden animate-ping"></span>
-              </button>
-              <button className='lg:py-2 p-1 px-3 bg-[#0CC1E0] text-white space-x-2 rounded-2xl hover:bg-gray-400 hover:text-black' onClick={() => setIsFlipped(!isFlipped)}><span className='text-sm lg:text-base'>Prescription</span><i class="fa-solid fa-pills lg:fa-xl"></i></button>
+            <div className='flex mt-7 lg:mt-5 mb-5 justify-between lg:m-5 gap-10'>
+              <div className='flex gap-3 items-center'>
+                <p>Reports:</p>
+                <i className="fa-solid fa-file-pdf text-3xl cursor-pointer text-red-600" onClick={openPdf}></i>
+                <i className="fa-solid fa-file-pdf text-3xl cursor-pointer text-red-600" onClick={openPdf}></i>
+              </div>
+              <div className='flex gap-3 items-center'>
+                <p>Health Metrics:</p>
+                <i className="fa-solid fa-notes-medical text-3xl cursor-pointer text-green-600"></i>
+              </div>
+              <div className='flex items-center gap-3'>
+                <button id="voiceRecorderBtn" class="w-9 lg:w-12 h-9 lg:h-12 bg-red-500 text-white rounded-full flex justify-center items-center hover:bg-red-600 transition duration-300 ease-in-out focus:outline-none relative">
+                  <i class="fa-solid fa-microphone lg:fa-lg"></i>
+                  <span id="pulseEffect" class="absolute w-full h-full rounded-full bg-red-400 opacity-75 scale-125 hidden animate-ping"></span>
+                </button>
+                <button className='lg:py-2 p-1 px-3 bg-[#0CC1E0] text-white space-x-2 rounded-2xl hover:bg-gray-400 hover:text-black' onClick={() => setIsFlipped(!isFlipped)}><span className='text-sm lg:text-base'>Prescription</span><i class="fa-solid fa-pills lg:fa-xl"></i></button>
+              </div>
             </div>
           </div>
 
@@ -92,6 +106,8 @@ function PatientDetailCard() {
                 <tr>
                   <th className="py-2 px-4 border-b">Medicine Name</th>
                   <th className="py-2 px-4 border-b">Dosage</th>
+                  <th className="py-2 px-4 border-b">Frequency</th>
+                  <th className="py-2 px-4 border-b">Duration</th>
                   <th className="py-2 px-4 border-b">Note</th>
                 </tr>
               </thead>
@@ -103,6 +119,22 @@ function PatientDetailCard() {
                         type="text"
                         value={row.medicineName}
                         onChange={(e) => handleInputChange(index, 'medicineName', e.target.value)}
+                        className="w-full px-2 py-1 border border-gray-300 rounded"
+                      />
+                    </td>
+                    <td className="py-2 px-4 border-b">
+                      <input
+                        type="text"
+                        value={row.dosage}
+                        onChange={(e) => handleInputChange(index, 'dosage', e.target.value)}
+                        className="w-full px-2 py-1 border border-gray-300 rounded"
+                      />
+                    </td>
+                    <td className="py-2 px-4 border-b">
+                      <input
+                        type="text"
+                        value={row.dosage}
+                        onChange={(e) => handleInputChange(index, 'frequency', e.target.value)}
                         className="w-full px-2 py-1 border border-gray-300 rounded"
                       />
                     </td>
